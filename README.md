@@ -1,7 +1,7 @@
 # LUCAS
 This is the Pytorch implementation of [LUCAS: LUng CAncer Screening with Multimodal Biomarkers](https://link.springer.com/chapter/10.1007/978-3-030-60946-7_12) presented at the Multimodal Learning for Clinical Decision Support workshop [ML-CDS](http://mcbr-cds.org) in [MICCAI, 2020](https://www.miccai2020.org/en/).
 
-<p align="center"><img src="imgs/overview_LUCAS.png" /></p>
+<p align="center"><img src="img/overview_LUCAS.png" /></p>
 
 # LUCAS dataset
 Coming soon
