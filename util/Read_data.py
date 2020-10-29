@@ -34,6 +34,7 @@ class MRIdataset(Dataset):
         label = self.labels[patient][self.task]
         descriptor = self.descriptor[patient]
         descriptor = descriptor[1:12] + descriptor[13:-1]
+        descriptor = np.array(descriptor, dtype=np.float32)
         image = load_image(str(patient) + '.nii.gz', self.root_dir)
 
         if any(np.asarray(image.shape) <= self.image_size):
@@ -56,7 +57,7 @@ class MRIdataset(Dataset):
         image = (image - 159.14433291523548) / 323.0573880113456
 
         return {'data': np.expand_dims(image, 0),
-                'descriptor': descriptor, 'target': label}
+                'descriptor': descriptor, 'target': label, 'id':patient}
 
     def weights_balanced(self):
         count = [0] * 2

@@ -155,7 +155,8 @@ def main():
             print('Learning rate:', lr)
 
             train_loss = train(args, model, train_loader, optimizer, bce)
-            test_loss, f1, flag = test(args, model, test_loader, bce)
+            test_loss, f1, flag = test(
+                args, model, test_loader, save_path, bce)
 
             out_file.write('{},{},{},{},{}\n'.format(
                 args.epoch, train_loss, test_loss, f1, lr))
@@ -214,7 +215,7 @@ def train(args, model, loader, optimizer, bce):
     print_stats = len(loader) // 5
     for batch_idx, sample in enumerate(loader):
         data = sample['data'].float().cuda()
-        descriptor = sample['descriptor'].float().cuda()
+        descriptor = sample['descriptor'].cuda()
         target = sample['target'].float().cuda()
         target = torch.stack([1 - target, target], dim=1)
 
@@ -273,7 +274,7 @@ def test(args, model, loader, save_path, bce, training=True):
     # Metrics
     roc = roc_auc_score(labels, scores)
     ap = average_precision_score(labels, scores)
-    f1 = f1_score(labels, scores)
+    f1 = f1_score(labels, predictions)
 
     if not training:
         print('ROC', roc, 'AP', ap, 'F1', f1)

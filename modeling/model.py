@@ -1,6 +1,6 @@
 import torch
 import torch.nn as nn
-from backbone import AlignedXception
+from .backbone import AlignedXception
 
 
 class DeepLab(nn.Module):
