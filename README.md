@@ -4,7 +4,7 @@ This is the Pytorch implementation of [LUCAS: LUng CAncer Screening with Multimo
 <p align="center"><img src="img/overview_LUCAS.png" width=500"//></p>
 
 # LUCAS dataset
-Coming soon
+You can access the LUCAS dataset and corresponding annotations following this [link](http://marr.uniandes.edu.co/LUCAS/)
 
 ## Installation
 Requirements:
