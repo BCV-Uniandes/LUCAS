@@ -3,8 +3,8 @@ This is the Pytorch implementation of [LUCAS: LUng CAncer Screening with Multimo
 
 <p align="center"><img src="img/overview_LUCAS.png" width=500"//></p>
 
-# LUCAS dataset
-You can access the LUCAS dataset and corresponding annotations following this [link](http://157.253.243.19/LUCAS/)
+# LUCAS dataset and pretrained models
+You can access the LUCAS dataset, corresponding annotations, and pretrained models following this [link](http://157.253.243.19/LUCAS/)
 
 ## Installation
 Requirements:
@@ -14,9 +14,6 @@ Requirements:
  - Numpy
  - [NiBabel](https://nipy.org/nibabel/)
  - Apex (optional, for Automatic Mixed Precision training)
-
-## Pretrained Weights
-Comming soon
 
 ## Citation
 ```
